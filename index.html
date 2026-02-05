@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TechMart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="logo">TechMart</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#" onclick="openLogin()">Login</a>
+            <a class="cart">🛒 <span id="cartCount">0</span></a>
+        </nav>
+    </header>
+
+    <!-- ================= HOME / HERO ================= -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+
+            <!-- LEFT TEXT -->
+            <div class="hero-text">
+                <h1>
+                    Power Your <br>
+                    <span>Tech Life</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Premium gadgets designed for performance,<br>
+                    style, and everyday power.
+                </p>
+            </div>
+
+            <!-- RIGHT IMAGE -->
+            <div class="hero-image">
+                <img src="Images/output-onlinetools.webp" alt="Gadgets">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= CATEGORIES ================= -->
+    <section id="categories" class="categories">
+        <h2>Shop by Category</h2>
+        <div class="category-buttons">
+            <button class="cat-btn active" onclick="filterProducts('earphones', this)">Earphones</button>
+            <button class="cat-btn" onclick="filterProducts('headphones', this)">Headphones</button>
+            <button class="cat-btn" onclick="filterProducts('speakers', this)">Speakers</button>
+            <button class="cat-btn" onclick="filterProducts('watches', this)">Smart Watches</button>
+        </div>
+    </section>
+
+    <!-- ================= PRODUCTS ================= -->
+    <section class="products-section">
+        <h2>Products</h2>
+
+        <div class="product-grid">
+
+            <!-- EARPHONES -->
+            <div class="product-card earphones">
+                <span class="badge new">NEW</span>
+                <img src="Images/earbuds.webp">
+                <h3>Wireless Earbuds</h3>
+                <p class="price">₹1299</p>
+                <div class="qty-control">
+                    <button onclick="updateCart(-1,1299,this)">−</button>
+                    <span class="qty">0</span>
+                    <button onclick="updateCart(1,1299,this)">+</button>
+                </div>
+            </div>
+
+            <div class="product-card earphones">
+                <span class="badge hot">HOT</span>
+                <img src="Images/sports_earbuds.webp">
+                <h3>Sports Earphones</h3>
+                <p class="price">₹999</p>
+                <div class="qty-control">
+                    <button onclick="updateCart(-1,999,this)">−</button>
+                    <span class="qty">0</span>
+                    <button onclick="updateCart(1,999,this)">+</button>
+                </div>
+            </div>
+
+            <div class="product-card earphones">
+                <span class="badge off">50% OFF</span>
+                <img src="Images/wired_earbuds.webp">
+                <h3>Wired Earphones</h3>
+                <p class="price">₹599</p>
+                <div class="qty-control">
+                    <button onclick="updateCart(-1,599,this)">−</button>
+                    <span class="qty">0</span>
+                    <button onclick="updateCart(1,599,this)">+</button>
+                </div>
+            </div>
+
+            <div class="product-card earphones">
+                <img src="Images/noise_cancellation.webp">
+                <h3>Noise Cancel Earbuds</h3>
+                <p class="price">₹1999</p>
+                <div class="qty-control">
+                    <button onclick="updateCart(-1,1999,this)">−</button>
+                    <span class="qty">0</span>
+                    <button onclick="updateCart(1,1999,this)">+</button>
+                </div>
+            </div>
+
+            <!-- HEADPHONES -->
+            <div class="product-card headphones">
+                <span class="badge hot">HOT</span>
+                <img src="Images/wired_headphone.webp">
+                <h3>Wireless Headphones</h3>
+                <p class="price">₹2999</p>
+                <div class="qty-control">
+                    <button onclick="updateCart(-1,2999,this)">−</button>
+                    <span class="qty">0</span>
+                    <button onclick="updateCart(1,2999,this)">+</button>
+                </div>
+            </div>
+
+            <div class="product-card headphones">
+                <img src="Images/gaming_headphone.webp">
+                <h3>Gaming Headset</h3>
+                <p class="price">₹3499</p>
+                <div class="qty-control">
+                    <button onclick="updateCart(-1,3499,this)">−</button>
+                    <span class="qty">0</span>
+                    <button onclick="updateCart(1,3499,this)">+</button>
+                </div>
+            </div>
+
+            <!-- SPEAKERS -->
+            <div class="product-card speakers">
+                <span class="badge new">NEW</span>
+                <img src="Images/bluetooth_speaker.webp">
+                <h3>Bluetooth Speaker</h3>
+                <p class="price">₹1499</p>
+                <div class="qty-control">
+                    <button onclick="updateCart(-1,1499,this)">−</button>
+                    <span class="qty">0</span>
+                    <button onclick="updateCart(1,1499,this)">+</button>
+                </div>
+            </div>
+
+            <div class="product-card speakers">
+                <img src="Images/party_speaker.webp">
+                <h3>Party Speaker</h3>
+                <p class="price">₹3999</p>
+                <div class="qty-control">
+                    <button onclick="updateCart(-1,3999,this)">−</button>
+                    <span class="qty">0</span>
+                    <button onclick="updateCart(1,3999,this)">+</button>
+                </div>
+            </div>
+
+            <!-- WATCHES -->
+            <div class="product-card watches">
+                <span class="badge off">50% OFF</span>
+                <img src="Images/smart_watch.webp">
+                <h3>Smart Watch</h3>
+                <p class="price">₹3499</p>
+                <div class="qty-control">
+                    <button onclick="updateCart(-1,3499,this)">−</button>
+                    <span class="qty">0</span>
+                    <button onclick="updateCart(1,3499,this)">+</button>
+                </div>
+            </div>
+
+            <div class="product-card watches">
+                <img src="Images/fitness-watch.webp">
+                <h3>Fitness Watch</h3>
+                <p class="price">₹2499</p>
+                <div class="qty-control">
+                    <button onclick="updateCart(-1,2499,this)">−</button>
+                    <span class="qty">0</span>
+                    <button onclick="updateCart(1,2499,this)">+</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="total-box">
+            Total Price: ₹<span id="totalPrice">0</span>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h4>About</h4>
+                <p>TechMart offers premium gadgets with modern design and reliable quality.</p>
+            </div>
+
+            <div>
+                <h4>Contact</h4>
+                <p>Email: support@techmart.com</p>
+                <p>Phone: +91 98765 43210</p>
+            </div>
+            <div>
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div>
+
+                <p class="copyright">© 2026 TechMart. All Rights Reserved.</p>
+    </footer>
+
+    <!-- ================= LOGIN MODAL ================= -->
+    <!-- ================= LOGIN MODAL ================= -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLogin()">×</span>
+
+            <h2 class="login-title">Welcome to <span>TechMart</span></h2>
+            <p class="login-subtitle">Login to continue shopping</p>
+
+            <form class="login-form">
+                <input type="email" placeholder="Email Address" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+
+            <p class="login-footer">
+                Don’t have an account? <a href="#">Sign up</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
